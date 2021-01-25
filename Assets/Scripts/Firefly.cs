@@ -4,22 +4,23 @@ using UnityEngine;
 public class Firefly : MonoBehaviour
 {
     [Header("Flash")]
-    [SerializeField] private LayerMask flashLayer;
+    [SerializeField] private LayerMask flashLayer = default;
 
     [Header("Display")]
-    [SerializeField] private GameObject normal;
-    [SerializeField] private GameObject flashing;
+    [SerializeField] private GameObject normal = null;
+    [SerializeField] private GameObject flashing = null;
 
     float powerLevel = 0f;
 
     float flashAtLevel;
-    float flashDetectedBoost;
     float flashRange;
 
-    public void SetValues(float level, float boost, float range)
+    float flashDetected;
+
+    public void SetValues(float level, float detected, float range)
     {
         flashAtLevel = level;
-        flashDetectedBoost = boost;
+        flashDetected = detected;
         flashRange = range;
     }
 
@@ -43,12 +44,14 @@ public class Firefly : MonoBehaviour
 
     public void ReceiveFlash()
     {
-        powerLevel += (powerLevel * flashDetectedBoost);
+        powerLevel += (powerLevel * flashDetected);
     }
 
     private IEnumerator Flash()
     {
-        var colliders = Physics.OverlapSphere(transform.position, flashRange, flashLayer);
+        var colliders = Physics.OverlapSphere(transform.position,
+                                              flashRange,
+                                              flashLayer);
 
         foreach (var collider in colliders)
         {

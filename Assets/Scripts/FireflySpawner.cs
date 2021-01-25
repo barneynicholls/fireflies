@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FireflySpawner : MonoBehaviour
@@ -10,7 +8,7 @@ public class FireflySpawner : MonoBehaviour
     [Header("Spawning")]
     [SerializeField] int spawnBounds = 10;
     [SerializeField] int spawnCount = 10;
-    [SerializeField] GameObject spawnObject;
+    [SerializeField] GameObject spawnObject = null;
 
     [Header("Firefly")]
     [SerializeField] float flashLevel = 250f;
@@ -44,7 +42,9 @@ public class FireflySpawner : MonoBehaviour
                                                       flashBoot,
                                                       flashDetectionRange);
 
-            firefly.GetComponent<FireflyFlight>().SetValues(speed, transform.position, bounds);
+            firefly.GetComponent<FireflyFlight>().SetValues(speed,
+                                                            transform.position,
+                                                            bounds);
         }
     }
 

@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
+  m_AmbientSkyColor: {r: 0.3783622, g: 0.8490566, b: 0.084104665, a: 1}
   m_AmbientEquatorColor: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 1
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -152,13 +152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa8bddde2979c94095b3a07b2cab29d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnBounds: 200
-  spawnCount: 2000
+  spawnBounds: 150
+  spawnCount: 1000
   spawnObject: {fileID: 6236619253350400409, guid: 7615a911e25b874418b7bdf4be77563d, type: 3}
-  flashLevel: 200
+  flashLevel: 100
   flashBoot: 0.1
   flashDetectionRange: 20
-  speed: 5
+  speed: 10
 --- !u!4 &453915502
 Transform:
   m_ObjectHideFlags: 0
@@ -249,7 +249,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &705507995
