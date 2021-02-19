@@ -15,12 +15,12 @@ public class Firefly : MonoBehaviour
     float flashAtLevel;
     float flashRange;
 
-    float flashDetected;
+    float increase;
 
-    public void SetValues(float level, float detected, float range)
+    public void SetValues(float level, float increase, float range)
     {
         flashAtLevel = level;
-        flashDetected = detected;
+        this.increase = increase;
         flashRange = range;
     }
 
@@ -44,7 +44,7 @@ public class Firefly : MonoBehaviour
 
     public void ReceiveFlash()
     {
-        powerLevel += (powerLevel * flashDetected);
+        powerLevel += (powerLevel * increase);
     }
 
     private IEnumerator Flash()
@@ -66,6 +66,7 @@ public class Firefly : MonoBehaviour
 
         normal.SetActive(true);
         flashing.SetActive(false);
+
     }
 
     private void OnDrawGizmos()
